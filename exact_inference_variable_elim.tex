@@ -1,0 +1,12 @@
+\section{Exact Inference: Variable Elimination}\label{sec:exactInferenceVariableElimination}
+
+\subsection{Conditional Probability Query}\label{sec:conditionalProbabilityQuery}
+The conditional probability query is of the type $P(Y | E=e)$.  Such queries allows for many reasoning patterns, including explanation, prediction, intercausal reasoning etc.).  From the definition of conditional probability we know that
+\begin{equation}\label{eq:conditionalProbabilityGivenEvidence}P(Y|E=e) = \frac{P(Y,e)}{P(e)}\end{equation}
+Where each instantiation of the numerator is a probability express $P(y|e)$, which can be computed by summing out all entries in the joint distribution that correspond to assignments consistent with $y,e$.  Let $W = \mathcal{X} - Y - E$; a set of variables that are neither evidence not query.  Then we have
+\begin{equation}P(y,e)=\sum_w P(y,e,w)\end{equation}\marginnote{Since $Y,E,W$ are all of the network's variables, each term $P(y,e,w)$ in the summation is simply an entry in the joint distribution.}
+The probability can be computed as \begin{equation}P(e)=\sum_y P(y,e)\end{equation}
+Once we have $P(e)$ and $P(y,e)$ we can then calculate $P(y|e)$ using equation~\ref{eq:conditionalProbabilityGivenEvidence}\footnote{Note that this process corresponds to traking the vector of marginal probabilities $P(y^1,e),\ldots,P(y^k,e)$ where $k=|Val(Y)|$ and renormalizing the entries to sum to 1. }.
+
+
+
