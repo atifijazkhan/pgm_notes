@@ -9,4 +9,11 @@ The probability can be computed as \begin{equation}P(e)=\sum_y P(y,e)\end{equati
 Once we have $P(e)$ and $P(y,e)$ we can then calculate $P(y|e)$ using equation~\ref{eq:conditionalProbabilityGivenEvidence}\footnote{Note that this process corresponds to traking the vector of marginal probabilities $P(y^1,e),\ldots,P(y^k,e)$ where $k=|Val(Y)|$ and renormalizing the entries to sum to 1. }.
 
 
+\subsection{Variable Elimination: The Basic Idea}\label{sec:variableEliminationBasicIdea}
+Consider a basic network $A \rightarrow B \rightarrow C \rightarrow D$.  Assuming that we would like to compute $P(B)$, then using basic probability reasoning we have:
+\begin{marginfigure}\label{fig:basicMarkovNetwork}
+\bayesianABCD
+\caption{Basic Bayesian network}
+\end{marginfigure}
+\begin{equation}P(B) = \sum_a P(a)P(B|a)\end{equation}
 
